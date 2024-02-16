@@ -100,9 +100,9 @@ namespace SampleMod
             privatemethod.Invoke(instance_of_class, the_arguments_of_the_method);
         }
 
-        public Character[] GetCharacters()
+        public static Character[] GetCharacters()
         {
-            GameManager gm = GetGameManager();
+            GameManager? gm = GetGameManager();
             if (gm != null)
             {
                 return gm.EntityManager.GetCharacters().ToArray<Character>();
@@ -113,7 +113,7 @@ namespace SampleMod
             }
         }
 
-        public Character[] GetCharactersInRadius(Vector2 pos, float radius)
+        public static Character[] GetCharactersInRadius(Vector2 pos, float radius)
         {
             Character[] characters = GetCharacters();
             List<Character> result = new List<Character>();
